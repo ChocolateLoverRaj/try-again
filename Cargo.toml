@@ -18,7 +18,10 @@ default = ["sync", "async", "async-tokio"]
 sync = []
 async = []
 async-tokio = ["async", "dep:tokio"]
+async-web = ["async", "web-sys/Window", "wasm-bindgen-futures"]
 
 [dependencies]
 tokio = { version = "1", features = ["full"], optional = true }
 tracing = "0.1"
+wasm-bindgen-futures = { version = "0.4.41", optional = true, default-features = false }
+web-sys = { version = "0.3.68", optional = false, default-features = false }
